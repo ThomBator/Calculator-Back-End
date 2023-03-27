@@ -12,7 +12,7 @@ app.use(cors({ origin: true, credentials: true }));
 app.use("/api/formData", formData);
 
 //Test connection
-const port = 3000;
+const port = process.env.PORT ?? 3000;
 
 app.get("/", (req, res) => {
   res.send(`Connected on ${port}. Use /api/formData to access routes.`);
